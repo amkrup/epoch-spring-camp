@@ -195,6 +195,20 @@ The loss curves under uniform sampling indicate relatively stable convergence be
 
 Under weighted sampling, NeuMF achieved both lower training loss and substantially higher Hit@10 performance. This indicates that harder negative examples allowed the model to better utilize its expressive capacity.
 
+\subsection{Effect of Large Embedding Dimensions}
+
+During experimentation, NeuMF was tested with an embedding dimension of 128 
+combined with weighted sampling. The results were 
+striking — Hit@10 reached 0.98 by epoch 25, far exceeding any result 
+observed at smaller embedding dimensions.
+
+This suggests that NeuMF benefits greatly from larger embedding 
+capacity when paired with smarter negative sampling. A larger embedding 
+dimension allows the GMF and MLP pathways to capture richer latent 
+structure, while weighted negative sampling provides harder, more informative negatives that 
+push the model to learn finer distinctions between relevant 
+and irrelevant items.
+
 \section{Key Observations}
 
 \begin{itemize}
